@@ -1,0 +1,69 @@
+# Binaries and executable files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Test and coverage artifacts
+*.cover
+*.coverage
+coverage.out
+coverage.html
+profile.out
+
+# Build directories
+/bin/
+/dist/
+/out/
+/build/
+
+# Go workspace and vendor
+go.work
+go.work.sum
+# vendor/ # Uncomment if vendor directory is used but not committed
+
+# IDEs and editors
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+*~
+*.swp
+*.swo
+
+# Operating System files
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.directory
+.fuse_hidden*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local / temporary tools & agent scratch directories
+.gemini/
+.system_generated/
+scratch/
+
