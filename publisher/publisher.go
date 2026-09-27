@@ -32,4 +32,3 @@ type Publisher interface {
 	// handlers is an ordered slice of handler invocation funcs (registration order).
 	Publish(ctx context.Context, handlers []HandlerFunc) error
 }
-

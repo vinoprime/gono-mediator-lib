@@ -64,4 +64,3 @@ func (p *FireAndForgetPublisher) Publish(ctx context.Context, handlers []Handler
 	// Always return nil — errors are async and reported via callback.
 	return nil
 }
-

@@ -46,4 +46,3 @@ type NotificationHandler[TNotification Notification] interface {
 	// Returning an error signals the publisher; behavior depends on the strategy.
 	Handle(ctx context.Context, notification TNotification) error
 }
-

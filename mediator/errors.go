@@ -69,4 +69,3 @@ func (e *NoHandlerError) Error() string {
 func (e *NoHandlerError) Is(target error) bool {
 	return target == ErrNoHandler
 }
-

@@ -68,4 +68,3 @@ func NewStream[T any](
 
 	return ch, nil
 }
-

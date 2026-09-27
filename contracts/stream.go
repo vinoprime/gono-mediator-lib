@@ -45,4 +45,3 @@ type StreamRequestHandler[TRequest any, TResponse any] interface {
 	// The channel MUST be closed by the handler when the stream ends.
 	Handle(ctx context.Context, request TRequest) (<-chan TResponse, error)
 }
-
