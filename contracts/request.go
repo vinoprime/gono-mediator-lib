@@ -37,8 +37,7 @@ func (RequestMarker[TResponse]) isRequest(TResponse) {}
 
 // RequestHandler processes a single Request and returns a TResponse or an error.
 //
-// Each request type must have exactly ONE handler registered — analogous to
-// MediatR's IRequestHandler<TRequest, TResponse>. This enforces the Command/Query
+// Each request type must have exactly ONE handler registered. This enforces the Command/Query
 // Responsibility pattern: one handler owns the logic for one request type.
 //
 // Implementations should:
@@ -50,4 +49,3 @@ type RequestHandler[TRequest any, TResponse any] interface {
 	// ctx carries deadlines, cancellation signals, and request-scoped values.
 	Handle(ctx context.Context, request TRequest) (TResponse, error)
 }
-

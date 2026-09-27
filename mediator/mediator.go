@@ -1,6 +1,6 @@
 // Package mediator is the entry point for gono-mediator-lib.
 //
-// It provides three top-level functions that mirror MediatR's core API:
+// It provides three top-level functions for the core mediator operations:
 //
 //   - Send[TResponse]  — dispatch a request to exactly one handler
 //   - Publish[TNotif]  — broadcast a notification to all registered handlers
@@ -127,7 +127,7 @@ func Send[TResponse any, TRequest any](ctx context.Context, m *Mediator, request
 // configured Publisher strategy (default: Sequential).
 //
 // If no handlers are registered for TNotification, Publish is a no-op (returns nil).
-// This mirrors MediatR's behaviour — zero handlers is not an error for notifications.
+// Zero handlers is not an error for notifications.
 //
 // Example:
 //
@@ -242,4 +242,3 @@ func buildPipeline[TRequest any, TResponse any](
 
 	return pipeline
 }
-

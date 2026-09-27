@@ -13,7 +13,7 @@ import "context"
 //   - You want fail-fast semantics — one failure stops the chain.
 //   - Simplest to reason about; easiest to debug.
 //
-// Analogous to MediatR's ForeachAwaitPublisher.
+// Handlers run one at a time in registration order.
 type SequentialPublisher struct{}
 
 // NewSequentialPublisher creates the default sequential publishing strategy.
@@ -35,4 +35,3 @@ func (p *SequentialPublisher) Publish(ctx context.Context, handlers []HandlerFun
 	}
 	return nil
 }
-

@@ -19,7 +19,7 @@ import (
 //   - Handlers are independent and should not block each other.
 //   - You want the fastest possible fan-out (total time ≈ slowest handler, not sum).
 //
-// Analogous to MediatR's TaskWhenAllPublisher.
+// All handlers run concurrently and their errors are aggregated.
 //
 // Note: Handlers receive the same context. If you need to cancel all handlers on
 // first failure, use a derived context with cancel — see WithContext option.
@@ -58,4 +58,3 @@ func (p *ParallelPublisher) Publish(ctx context.Context, handlers []HandlerFunc)
 	// errors.Join returns nil if all entries are nil — no manual nil check needed.
 	return errors.Join(errs...)
 }
-

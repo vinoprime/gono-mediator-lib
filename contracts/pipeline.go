@@ -30,7 +30,7 @@ type Next[TResponse any] func(ctx context.Context) (TResponse, error)
 //
 //	[ Logging [ Recovery [ Validation [ Handler ] ] ] ]
 //
-// This is equivalent to MediatR's IPipelineBehavior<TRequest, TResponse>.
+// This is the library's generic request pipeline contract.
 // Behaviors should be registered in the order they should execute (outermost first).
 //
 // Common use-cases:
@@ -46,4 +46,3 @@ type PipelineBehavior[TRequest any, TResponse any] interface {
 	// Do NOT call next(ctx) to short-circuit (e.g., return cached result).
 	Handle(ctx context.Context, request TRequest, next Next[TResponse]) (TResponse, error)
 }
-

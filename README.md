@@ -1,6 +1,6 @@
 # gono-mediator-lib
 
-> A production-grade, type-safe **MediatR clone** for Go — built with Go 1.21 generics, zero external dependencies, and no global state.
+> A production-grade, type-safe mediator library for Go — built with Go 1.21 generics, zero external dependencies, and no global state.
 
 [![Go Version](https://img.shields.io/badge/go-1.21+-blue.svg)](https://golang.org/dl/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -9,17 +9,17 @@
 
 ## Why?
 
-[MediatR](https://github.com/jbogard/MediatR) is the de-facto CQRS/mediator library for .NET. `gono-mediator-lib` brings the same proven patterns to Go:
+`gono-mediator-lib` provides typed request dispatch, notifications, streaming, and composable pipeline behaviors for Go applications:
 
-| Feature | MediatR (.NET) | gono-mediator-lib (Go) |
-|---|---|---|
-| Request/Response dispatch | `ISender.Send<T>` | `mediator.Send[T]` |
-| Notification fan-out | `IPublisher.Publish` | `mediator.Publish[T]` |
-| Streaming | `ISender.CreateStream` | `mediator.CreateStream[T]` |
-| Pipeline middleware | `IPipelineBehavior<Req,Res>` | `contracts.PipelineBehavior[Req,Res]` |
-| Publisher strategies | `INotificationPublisher` | `publisher.Publisher` interface |
-| Type safety | C# generics | Go generics (no `reflect` in hot path) |
-| DI container | Required (Microsoft.DI) | **Not required** — explicit wiring |
+| Feature                   | gono-mediator-lib                             |
+| ------------------------- | --------------------------------------------- |
+| Request/Response dispatch | `mediator.Send[T]`                            |
+| Notification fan-out      | `mediator.Publish[T]`                         |
+| Streaming                 | `mediator.CreateStream[T]`                    |
+| Pipeline middleware       | `contracts.PipelineBehavior[Req,Res]`         |
+| Publisher strategies      | `publisher.Publisher` interface               |
+| Type safety               | Go generics with no `reflect` in the hot path |
+| Dependency injection      | **Not required** — explicit wiring            |
 
 ---
 
@@ -161,12 +161,12 @@ Behaviors are cross-cutting concerns that wrap every request — like HTTP middl
 
 ### Built-in Behaviors
 
-| Behavior | What it does |
-|---|---|
-| `RecoveryBehavior` | Converts panics to `*mediator.PanicError` — always register outermost |
-| `LoggingBehavior` | Logs request name + duration + error via `slog` |
-| `ValidationBehavior` | Calls `Validate() error` if request implements `pipeline.Validator` |
-| `TimeoutBehavior` | Wraps inner pipeline with `context.WithTimeout` |
+| Behavior             | What it does                                                          |
+| -------------------- | --------------------------------------------------------------------- |
+| `RecoveryBehavior`   | Converts panics to `*mediator.PanicError` — always register outermost |
+| `LoggingBehavior`    | Logs request name + duration + error via `slog`                       |
+| `ValidationBehavior` | Calls `Validate() error` if request implements `pipeline.Validator`   |
+| `TimeoutBehavior`    | Wraps inner pipeline with `context.WithTimeout`                       |
 
 ### Usage
 
@@ -366,4 +366,3 @@ go run ./examples/streaming/...  # Channel streaming + cancellation
 go test ./... -count=1 -v
 go vet ./...
 ```
-
