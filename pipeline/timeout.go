@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
 )
 
 // TimeoutBehavior injects a deadline into the context before calling the handler.
@@ -50,4 +50,3 @@ func (b *TimeoutBehavior[TRequest, TResponse]) Handle(
 
 	return next(timeoutCtx)
 }
-

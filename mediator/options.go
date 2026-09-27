@@ -11,9 +11,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/publisher"
-	"github.com/gono-mediator-lib/registry"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/publisher"
+	"github.com/vinoprime/gono-mediator-lib/registry"
 )
 
 // options holds all configurable settings for the Mediator.
@@ -131,4 +131,3 @@ func WithBehavior[TRequest any, TResponse any](b contracts.PipelineBehavior[TReq
 		})
 	}
 }
-

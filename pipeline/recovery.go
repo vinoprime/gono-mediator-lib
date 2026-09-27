@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/mediator"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/mediator"
 )
 
 // RecoveryBehavior wraps the pipeline in a panic recovery guard.
@@ -59,4 +59,3 @@ func (b *RecoveryBehavior[TRequest, TResponse]) Handle(
 
 	return next(ctx)
 }
-

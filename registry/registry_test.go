@@ -12,8 +12,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/registry"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/registry"
 )
 
 // ── Test doubles ──────────────────────────────────────────────────────────────
@@ -144,4 +144,3 @@ func TestRegistry_ConcurrentNotificationRegistration(t *testing.T) {
 var _ contracts.RequestHandler[fakeRequest, string] = (*fakeHandler)(nil)
 var _ contracts.NotificationHandler[fakeNotification] = (*fakeNotifHandler)(nil)
 var _ contracts.StreamRequestHandler[fakeRequest, string] = (*fakeStreamHandler)(nil)
-

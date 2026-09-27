@@ -15,7 +15,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
 )
 
 // handlerEntry wraps a registered handler with its reflection type for
@@ -189,4 +189,3 @@ func (r *Registry) ResolveStreamHandler(requestType reflect.Type) (any, bool) {
 	}
 	return entry.handler, true
 }
-

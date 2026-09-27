@@ -73,7 +73,7 @@ gono-mediator-lib/
 ```go
 import (
     "context"
-    "github.com/gono-mediator-lib/contracts"
+    "github.com/vinoprime/gono-mediator-lib/contracts"
 )
 
 // UserDTO is the response type.
@@ -127,8 +127,8 @@ func (h *AuditLogHandler) Handle(ctx context.Context, evt UserCreatedEvent) erro
 ```go
 import (
     "context"
-    "github.com/gono-mediator-lib/mediator"
-    "github.com/gono-mediator-lib/registry"
+    "github.com/vinoprime/gono-mediator-lib/mediator"
+    "github.com/vinoprime/gono-mediator-lib/registry"
 )
 
 // Create registry and register handlers.
@@ -173,8 +173,8 @@ Behaviors are cross-cutting concerns that wrap every request — like HTTP middl
 ```go
 import (
     "log/slog"
-    "github.com/gono-mediator-lib/mediator"
-    "github.com/gono-mediator-lib/pipeline"
+    "github.com/vinoprime/gono-mediator-lib/mediator"
+    "github.com/vinoprime/gono-mediator-lib/pipeline"
 )
 
 logger := slog.Default()
@@ -222,7 +222,7 @@ func (b *AuthorizationBehavior[TReq, TRes]) Handle(
 ## Notification Publisher Strategies
 
 ```go
-import "github.com/gono-mediator-lib/publisher"
+import "github.com/vinoprime/gono-mediator-lib/publisher"
 
 // Sequential (default) — one-by-one, stops on first error.
 m := mediator.New(mediator.WithPublisher(publisher.NewSequentialPublisher()))
@@ -243,7 +243,7 @@ m := mediator.New(mediator.WithPublisher(
 ## Streaming
 
 ```go
-import "github.com/gono-mediator-lib/stream"
+import "github.com/vinoprime/gono-mediator-lib/stream"
 
 // 1. Define a StreamRequest.
 type LiveDataQuery struct {

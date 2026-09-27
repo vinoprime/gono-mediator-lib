@@ -15,9 +15,9 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/mediator"
-	"github.com/gono-mediator-lib/registry"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/mediator"
+	"github.com/vinoprime/gono-mediator-lib/registry"
 )
 
 // ── Domain model ─────────────────────────────────────────────────────────────
@@ -37,7 +37,6 @@ type GetUserQuery struct {
 	contracts.RequestMarker[UserDTO]
 	UserID string
 }
-
 
 // GetUserHandler processes GetUserQuery and returns a UserDTO.
 // In production, this would query a database.

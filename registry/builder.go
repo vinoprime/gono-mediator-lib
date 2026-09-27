@@ -17,7 +17,7 @@ package registry
 import (
 	"errors"
 
-	"github.com/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
 )
 
 // Builder provides a fluent API for registering handlers into a Registry.
@@ -84,4 +84,3 @@ func (b *Builder) Build() error {
 	// errors.Join (Go 1.20+) combines multiple errors into one, preserving all messages.
 	return errors.Join(b.errs...)
 }
-

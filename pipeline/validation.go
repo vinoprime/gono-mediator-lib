@@ -3,7 +3,7 @@ package pipeline
 import (
 	"context"
 
-	"github.com/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
 )
 
 // Validator is an optional interface that request types can implement to
@@ -67,4 +67,3 @@ func (b *ValidationBehavior[TRequest, TResponse]) Handle(
 
 	return next(ctx)
 }
-

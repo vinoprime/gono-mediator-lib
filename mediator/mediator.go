@@ -32,8 +32,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/publisher"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/publisher"
 )
 
 // Mediator is the central dispatcher. It is safe for concurrent use.

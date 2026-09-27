@@ -14,10 +14,10 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/mediator"
-	"github.com/gono-mediator-lib/registry"
-	"github.com/gono-mediator-lib/stream"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/mediator"
+	"github.com/vinoprime/gono-mediator-lib/registry"
+	"github.com/vinoprime/gono-mediator-lib/stream"
 )
 
 // ── Domain ────────────────────────────────────────────────────────────────────

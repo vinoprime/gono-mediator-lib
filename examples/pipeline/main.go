@@ -15,10 +15,10 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/gono-mediator-lib/contracts"
-	"github.com/gono-mediator-lib/mediator"
-	"github.com/gono-mediator-lib/pipeline"
-	"github.com/gono-mediator-lib/registry"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/mediator"
+	"github.com/vinoprime/gono-mediator-lib/pipeline"
+	"github.com/vinoprime/gono-mediator-lib/registry"
 )
 
 // ── Domain ────────────────────────────────────────────────────────────────────
@@ -71,7 +71,6 @@ type BuggyHandler struct{}
 func (h *BuggyHandler) Handle(_ context.Context, _ BuggyCommand) (string, error) {
 	panic("unexpected nil pointer dereference in BuggyHandler")
 }
-
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 

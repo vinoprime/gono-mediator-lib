@@ -18,7 +18,7 @@ import (
 	"log/slog"
 	"time"
 
-	"github.com/gono-mediator-lib/contracts"
+	"github.com/vinoprime/gono-mediator-lib/contracts"
 )
 
 // LoggingBehavior logs the request name, outcome, and duration for every request.
@@ -76,4 +76,3 @@ func (b *LoggingBehavior[TRequest, TResponse]) Handle(
 
 	return response, err
 }
-
